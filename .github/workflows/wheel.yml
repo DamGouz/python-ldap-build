@@ -35,9 +35,10 @@ jobs:
         shell: cmd
       - run: build_python-ldap.cmd
         shell: cmd
-      - uses: pypa/cibuildwheel@v2.16.2
+      - uses: pypa/cibuildwheel@v2.22.0
         env:
-          CIBW_ARCHS_WINDOWS: AMD64
+          CIBW_PLATFORM: windows
+          CIBW_ARCHS: AMD64
       - uses: actions/upload-artifact@v3
         with:
           path: ./wheelhouse/*.whl
@@ -65,9 +66,10 @@ jobs:
         shell: cmd
       - run: build_python-ldap.cmd
         shell: cmd
-      - uses: pypa/cibuildwheel@v2.16.2
+      - uses: pypa/cibuildwheel@v2.22.0
         env:
-          CIBW_ARCHS_WINDOWS: x86
+          CIBW_PLATFORM: windows
+          CIBW_ARCHS: x86
       - uses: actions/upload-artifact@v3
         with:
           path: ./wheelhouse/*.whl
